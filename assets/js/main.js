@@ -77,6 +77,21 @@
 	
 	$(".progress-bar").ProgressBar();
 
+
+	// Mobile responsive hide property for navbar
+	const mobileInfo = document.querySelector('.mobile_info_open');
+	const responsiveMenu = document.querySelector('.responsive_mobile_menu');
+
+	const observer = new MutationObserver(() => {
+	if (mobileInfo.classList.contains('show')) {
+		responsiveMenu.style.display = 'none';
+	} else {
+		responsiveMenu.style.display = '';
+	}
+	});
+
+	observer.observe(mobileInfo, { attributes: true, attributeFilter: ['class'] });
+
 	/* 
 
 
